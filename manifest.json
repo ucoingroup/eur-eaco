@@ -1,0 +1,23 @@
+{
+  "name": "EACO Earth Village - Semi-Acquaintance Social",
+  "short_name": "EACO Social",
+  "description": "369 services within 3km. Semi-acquaintance social platform powered by EACO Web3.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f0fdf4",
+  "theme_color": "#0a5c36",
+  "orientation": "portrait-primary",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><circle cx='96' cy='96' r='90' fill='%232ecc71'/><text y='120' x='96' font-size='80' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>E</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><circle cx='256' cy='256' r='240' fill='%232ecc71'/><text y='320' x='256' font-size='200' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>E</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
