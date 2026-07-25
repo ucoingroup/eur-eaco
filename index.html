@@ -1,244 +1,307 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="theme-color" content="#0a5c36">
-  <meta name="description" content="EACO Earth Village - Semi-Acquaintance Social Platform within 3km. 369 services, Web3 powered, 26 languages.">
-  <title>EACO Earth Village | Semi-Acquaintance Social</title>
-  <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%232ecc71'/><text y='65' x='50' font-size='40' text-anchor='middle'>E</text></svg>">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%232ecc71'/><text y='65' x='50' font-size='40' text-anchor='middle'>E</text></svg>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EACO - Earth's Best Coin. AI + RWA + Web3 Civilization Model. Energy x Attitude x Cooperation x Optimization.">
+  <meta name="keywords" content="EACO, Earth's Best Coin, AI, RWA, Web3, Solana, Civilization Model, ECI">
+  <title>EACO - Earth's Best Coin | AI + RWA + Web3</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%233b82f6'/><text x='50' y='65' font-size='40' font-weight='bold' fill='white' text-anchor='middle'>E</text></svg>">
 </head>
 <body>
 
-  <!-- ========== Header ========== -->
-  <header class="header">
-    <div class="header-inner">
-      <div class="logo" onclick="scrollToTop()">
-        <div class="logo-icon">E</div>
-        <span class="logo-text" id="logoText">EACO</span>
-      </div>
-      <div class="search-bar">
-        <span class="search-icon">&#128269;</span>
-        <input type="text" id="searchInput" placeholder="Search services..." oninput="handleSearch(this.value)">
-      </div>
-      <div class="lang-selector">
-        <button class="lang-btn" onclick="toggleLangDropdown()">
-          <span id="currentLangFlag">&#127463;&#127479;</span>
-          <span id="currentLangName">EN</span>
-          <span>&#9662;</span>
-        </button>
-        <div class="lang-dropdown" id="langDropdown"></div>
-      </div>
-    </div>
-  </header>
+  <!-- ============================================
+       Navigation
+       ============================================ -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-icon">E</span>
+        <span>EACO</span>
+      </a>
 
-  <!-- ========== Hero ========== -->
-  <section class="hero">
-    <div class="hero-badge">
-      <span>&#127757;</span>
-      <span id="heroBadge">EACO Web3 + RWA + AI</span>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" data-i18n="nav.home">Home</a></li>
+        <li><a href="#price" data-i18n="nav.price">Price Targets</a></li>
+        <li><a href="#gdp" data-i18n="nav.gdp">Europe GDP</a></li>
+        <li><a href="#assets" data-i18n="nav.assets">Liquid Assets</a></li>
+        <li><a href="#model" data-i18n="nav.model">Civilization Model</a></li>
+        <li><a href="#eci" data-i18n="nav.eci">ECI Index</a></li>
+        <li><a href="#ai" data-i18n="nav.ai">AI Modules</a></li>
+        <li><a href="#roadmap" data-i18n="nav.roadmap">Roadmap</a></li>
+        <li><a href="#whitepaper" data-i18n="nav.whitepaper">Whitepaper</a></li>
+        <li><a href="#web3" data-i18n="nav.web3">Web3 Countries</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div class="lang-switcher">
+          <button class="lang-btn" id="langBtn" onclick="toggleLangDropdown()">
+            <span class="lang-flag" id="currentLangFlag">EN</span>
+            <span class="lang-full">English</span>
+          </button>
+          <div class="lang-dropdown" id="langDropdown"></div>
+        </div>
+
+        <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">&#9681;</button>
+
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">&#9776;</button>
+      </div>
     </div>
-    <h1 class="hero-title" id="heroTitle">EACO Earth Village</h1>
-    <p class="hero-subtitle" id="heroSubtitle">Semi-Acquaintance Social | Within 3km</p>
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <div class="hero-stat-num">369</div>
-        <div class="hero-stat-label" id="statServices">Services</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">16</div>
-        <div class="hero-stat-label" id="statCategories">Categories</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">26</div>
-        <div class="hero-stat-label" id="statLanguages">Languages</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">6</div>
-        <div class="hero-stat-label" id="statRegions">Pilot Regions</div>
+  </nav>
+
+  <!-- ============================================
+       Hero Section
+       ============================================ -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-badge">AI + RWA + WEB3</div>
+      <h1 data-i18n="hero.title">Earth's Best Coin</h1>
+      <p class="hero-subtitle" data-i18n="hero.subtitle">AI + RWA + Web3 Civilization Model</p>
+      <p class="hero-tagline" data-i18n="hero.tagline">Energy x Attitude x Cooperation x Optimization</p>
+      <a href="#price" class="hero-cta" data-i18n="hero.cta">Explore EACO</a>
+
+      <div class="hero-contract">
+        <label data-i18n="hero.contract">Contract Address</label>
+        <address>DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH</address>
+        <a href="https://ucoingroup.github.io/earths-best-coin/" target="_blank" rel="noopener" style="font-size:0.85rem;color:var(--accent-cyan);text-decoration:none;" data-i18n="hero.website">Official Website &rarr;</a>
       </div>
     </div>
   </section>
 
-  <!-- ========== Concept Cards ========== -->
-  <div class="concept-row">
-    <div class="concept-card">
-      <div class="concept-icon green">&#129309;</div>
-      <div>
-        <div class="concept-title" id="conceptTitle1">Semi-Acquaintance</div>
-        <div class="concept-desc" id="conceptDesc1">Service providers may be your friends, neighbors, or group members</div>
+  <!-- ============================================
+       Price Targets Section
+       ============================================ -->
+  <section class="section" id="price">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="price.title">EACO Price Targets</h2>
+        <p class="section-subtitle" data-i18n="price.subtitle">Step-by-step value milestones from penny to premium</p>
       </div>
-    </div>
-    <div class="concept-card">
-      <div class="concept-icon blue">&#128205;</div>
-      <div>
-        <div class="concept-title" id="conceptTitle2">3km Life Circle</div>
-        <div class="concept-desc" id="conceptDesc2">Focus on services within a 3-kilometer radius of your location</div>
-      </div>
-    </div>
-    <div class="concept-card">
-      <div class="concept-icon gold">&#9889;</div>
-      <div>
-        <div class="concept-title" id="conceptTitle3">EACO Payment</div>
-        <div class="concept-desc" id="conceptDesc3">Pay with EACO ($e) - Earth's Best Coin on Solana blockchain</div>
-      </div>
-    </div>
-  </div>
 
-  <!-- ========== Category Filter ========== -->
-  <div class="category-bar" id="categoryBar"></div>
+      <div class="price-stages" id="priceStages"></div>
 
-  <!-- ========== Services Grid ========== -->
-  <section class="services-section">
-    <div class="section-header">
-      <h2 class="section-title" id="servicesTitle">Services</h2>
-      <div class="results-count"><span id="resultsCount">369</span> <span id="resultsLabel">services</span></div>
-    </div>
-    <div class="services-grid" id="servicesGrid"></div>
-    <div class="no-results" id="noResults" style="display:none">
-      <div class="no-results-icon">&#128533;</div>
-      <p id="noResultsText">No services found. Try a different search.</p>
+      <div class="section-header" style="margin-top:60px;">
+        <h3 class="section-title" style="font-size:1.8rem;" data-i18n="price.howToAchieve">How to Achieve This Step by Step</h3>
+      </div>
+
+      <div class="steps-container" id="priceSteps"></div>
     </div>
   </section>
 
-  <!-- ========== EACO Web3 Section ========== -->
-  <section class="eaco-section" id="eacoSection">
-    <div class="eaco-card">
-      <div class="eaco-header">
-        <div class="eaco-logo">E</div>
-        <div>
-          <div class="eaco-title">EACO</div>
-          <div class="eaco-subtitle" id="eacoSubtitle">Earth's Best Coin | Solana | $e</div>
-        </div>
+  <!-- ============================================
+       GDP Section
+       ============================================ -->
+  <section class="section" id="gdp" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="gdp.title">Europe Top 10 GDP Countries</h2>
+        <p class="section-subtitle" data-i18n="gdp.subtitle">IMF 2026 Forecast - EACO Target Markets</p>
       </div>
 
-      <p class="eaco-mission" id="eacoMission"></p>
-
-      <div class="eaco-definition-box">
-        <div class="eaco-definition-label" id="definitionLabel">EACO Definition</div>
-        <div class="eaco-definition-text" id="definitionText"></div>
-        <div class="eaco-definition-keywords">
-          <span class="kw">E - Energy</span>
-          <span class="kw">A - Attitude</span>
-          <span class="kw">C - Cooperation</span>
-          <span class="kw">O - Optimization</span>
-        </div>
+      <div class="gdp-table-wrapper">
+        <table class="gdp-table">
+          <thead>
+            <tr id="gdpTableHeader"></tr>
+          </thead>
+          <tbody id="gdpTableBody"></tbody>
+        </table>
       </div>
 
-      <div class="lp-badge">
-        <span>&#128640;</span>
-        <span id="lpBadge">LP Partner Program: 1/5/10/50/100 SOL | 90-day Lock</span>
-      </div>
-
-      <div class="verify-box">
-        <div class="verify-title" id="verifyTitle">Wallet Verification</div>
-        <div class="verify-desc" id="verifyDesc">Send 2000 EACO test -> return 1000 EACO to verify wallet ownership</div>
-      </div>
-
-      <div class="eaco-info-grid">
-        <div class="eaco-info-item">
-          <div class="eaco-info-label" id="caLabel">Contract Address (CA)</div>
-          <div class="ca-box">
-            <span class="ca-text" id="caText">DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH</span>
-            <button class="copy-btn" onclick="copyCA()">&#128203;</button>
-          </div>
-        </div>
-        <div class="eaco-info-item">
-          <div class="eaco-info-label" id="chainLabel">Blockchain</div>
-          <div class="eaco-info-value">Solana</div>
-        </div>
-        <div class="eaco-info-item">
-          <div class="eaco-info-label" id="supplyLabel">Total Supply</div>
-          <div class="eaco-info-value">1.35 billion EACO</div>
-        </div>
-        <div class="eaco-info-item">
-          <div class="eaco-info-label" id="websiteLabel">Official Website</div>
-          <div class="eaco-info-value"><a href="https://ucoingroup.github.io/earths-best-coin/" target="_blank" rel="noopener">earths-best-coin.github.io</a></div>
-        </div>
-        <div class="eaco-info-item">
-          <div class="eaco-info-label" id="rateLabel">EACO 50-Country Oracle</div>
-          <div class="eaco-info-value"><a href="https://ucoingroup.github.io/eaco50rate/" target="_blank" rel="noopener">eaco50rate - FX Oracle Panel</a></div>
-        </div>
-        <div class="eaco-info-item">
-          <div class="eaco-info-label" id="explorerLabel">Blockchain Explorers</div>
-          <div class="eaco-info-value"><a href="https://solscan.io/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank" rel="noopener">Solscan</a> | <a href="https://www.oklink.com/zh-hans/solana/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank" rel="noopener">OKlink</a> | <a href="https://orbmarkets.io/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank" rel="noopener">Orb</a></div>
-        </div>
-      </div>
-
-      <div class="eaco-info-label" id="dexLabel" style="margin-bottom:10px">DEX Liquidity Pools</div>
-      <div class="dex-grid">
-        <a class="dex-card" href="https://raydium.io/swap/?inputMint=sol&outputMint=DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank" rel="noopener">
-          <div class="dex-name">Raydium</div>
-          <div class="dex-pair">E-SOL Pool</div>
-        </a>
-        <a class="dex-card" href="https://app.meteora.ag/dlmm/6ZfCi3qzhgDN1ygHVYXvfsfrwz8ZhQ7hD5mJtjeuUDyE" target="_blank" rel="noopener">
-          <div class="dex-name">Meteora</div>
-          <div class="dex-pair">E-USDT DLMM</div>
-        </a>
-        <a class="dex-card" href="https://www.orca.so/pools/6GDJvBhq9NY4Tcry8rsCVU4RTd8tzjUQCANvHngjK7jw" target="_blank" rel="noopener">
-          <div class="dex-name">Orca</div>
-          <div class="dex-pair">Reserve Pool</div>
-        </a>
-      </div>
-
-      <div class="eaco-info-label" id="tgLabel" style="margin-bottom:10px">Community Channels</div>
-      <div class="tg-grid" id="tgGrid"></div>
+      <p class="gdp-source" id="gdpSource" style="text-align:center;margin-top:12px;font-size:0.8rem;color:var(--text-muted);"></p>
+      <div class="gdp-insight" id="gdpInsight"></div>
     </div>
   </section>
 
-  <!-- ========== Pilot Regions ========== -->
-  <section class="pilot-section">
-    <h2 class="section-title" id="pilotTitle" style="margin-bottom:16px">Pilot Regions</h2>
-    <div class="pilot-grid" id="pilotGrid"></div>
+  <!-- ============================================
+       Assets Section
+       ============================================ -->
+  <section class="section" id="assets">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="assets.title">UK & Europe's 30 Strongest Liquid Asset Classes</h2>
+        <p class="section-subtitle" data-i18n="assets.subtitle">By category - not individual investment advice</p>
+      </div>
+
+      <div class="assets-grid" id="assetsGrid"></div>
+
+      <h3 class="section-title" style="font-size:1.4rem;text-align:center;margin-bottom:24px;" data-i18n="assets.tableTitle">Summary: 30 Strongest Liquid Asset Classes</h3>
+
+      <div class="assets-summary-table">
+        <table>
+          <thead>
+            <tr id="assetsTableHeader"></tr>
+          </thead>
+          <tbody id="assetsTableBody"></tbody>
+        </table>
+      </div>
+    </div>
   </section>
 
-  <!-- ========== Languages ========== -->
-  <section class="lang-section">
-    <h2 class="section-title" id="langTitle" style="margin-bottom:16px">Multilingual Support</h2>
-    <div class="lang-cards" id="langCards"></div>
+  <!-- ============================================
+       Civilization Model Section
+       ============================================ -->
+  <section class="section" id="model" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="model.title">EACO Civilization Model</h2>
+        <p class="section-subtitle" data-i18n="model.subtitle">Energy x Attitude x Cooperation x Optimization</p>
+        <p style="max-width:700px;margin:16px auto 0;color:var(--text-secondary);" data-i18n="model.intro"></p>
+      </div>
+
+      <div class="pillars-grid" id="pillarsGrid"></div>
+
+      <div class="section-header" style="margin-top:40px;">
+        <h3 class="section-title" style="font-size:1.6rem;" data-i18n="model.integrationTitle">5 Core Integration Pathways</h3>
+      </div>
+
+      <div class="integrations-list" id="integrationsList"></div>
+    </div>
   </section>
 
-  <!-- ========== Footer ========== -->
+  <!-- ============================================
+       ECI Index Section
+       ============================================ -->
+  <section class="section" id="eci">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="eci.title">Earth Civilization Index (ECI)</h2>
+        <p class="section-subtitle" data-i18n="eci.subtitle">The Web3 version of Earth's civilization index</p>
+        <p style="max-width:700px;margin:16px auto 0;color:var(--text-secondary);" data-i18n="eci.intro"></p>
+      </div>
+
+      <div class="eci-components" id="eciComponents"></div>
+
+      <div class="eci-formula" id="eciFormula"></div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       AI Modules Section
+       ============================================ -->
+  <section class="section" id="ai" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="ai.title">EACO AI Module Architecture</h2>
+        <p class="section-subtitle" data-i18n="ai.subtitle">Four AI modules aligned with the E-A-C-O civilization model</p>
+      </div>
+
+      <div class="ai-modules-grid" id="aiModulesGrid"></div>
+
+      <div class="section-header" style="margin-top:40px;">
+        <h3 class="section-title" style="font-size:1.6rem;" data-i18n="ai.flowTitle">AI Data Flow Architecture</h3>
+      </div>
+
+      <div class="ai-flow" id="aiFlow"></div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Roadmap Section
+       ============================================ -->
+  <section class="section" id="roadmap">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="roadmap.title">EACO Development Roadmap</h2>
+        <p class="section-subtitle" data-i18n="roadmap.subtitle">From data integration to global civilization asset</p>
+      </div>
+
+      <div class="section-header" style="margin-bottom:30px;">
+        <h3 class="section-title" style="font-size:1.6rem;" data-i18n="roadmap.threeStepTitle">3-Step Strategic Roadmap</h3>
+      </div>
+
+      <div class="three-steps" id="threeSteps"></div>
+
+      <div class="section-header" style="margin-top:60px;margin-bottom:30px;">
+        <h3 class="section-title" style="font-size:1.6rem;" data-i18n="roadmap.twelveMonthTitle">12-Month Development Roadmap</h3>
+      </div>
+
+      <div class="timeline" id="timeline"></div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Whitepaper Section
+       ============================================ -->
+  <section class="section" id="whitepaper" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="whitepaper.title">EACO Whitepaper Structure</h2>
+        <p class="section-subtitle" data-i18n="whitepaper.subtitle">Complete whitepaper framework for EACO x European Assets</p>
+      </div>
+
+      <div class="whitepaper-grid" id="whitepaperGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Web3 Countries Section
+       ============================================ -->
+  <section class="section" id="web3">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="web3.title">Europe Top 10 Web3-Friendly Countries</h2>
+        <p class="section-subtitle" data-i18n="web3.subtitle">EACO Europe Group</p>
+      </div>
+
+      <div class="web3-table-wrapper">
+        <table class="web3-table">
+          <thead>
+            <tr id="web3TableHeader"></tr>
+          </thead>
+          <tbody id="web3TableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="web3-trend" id="web3Trend"></div>
+      <p class="web3-uk-note" id="web3UkNote"></p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       Footer
+       ============================================ -->
   <footer class="footer">
-    <div class="footer-logo">EACO</div>
-    <p class="footer-text" id="footerText">EACO Earth's Best Coin | The Only Earth MEME Coin in the Universe</p>
-    <div class="footer-links">
-      <a href="https://x.com/eacocc" target="_blank" rel="noopener">X / Twitter</a>
-      <a href="https://linktr.ee/eacocc" target="_blank" rel="noopener">Linktree</a>
-      <a href="https://t.me/e_eacocc" target="_blank" rel="noopener">Telegram</a>
-      <a href="https://ucoingroup.github.io/earths-best-coin/" target="_blank" rel="noopener">Website</a>
-      <a href="https://ucoingroup.github.io/eaco50rate/" target="_blank" rel="noopener">EACO 50-Rate Oracle</a>
-      <a href="https://solscan.io/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank" rel="noopener">Solscan</a>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>EACO</h3>
+          <p data-i18n="hero.subtitle">AI + RWA + Web3 Civilization Model</p>
+          <p style="margin-top:8px;font-size:0.8rem;color:var(--text-muted);">
+            CA: DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer.links">Quick Links</h4>
+          <ul>
+            <li><a href="#price" data-i18n="nav.price">Price Targets</a></li>
+            <li><a href="#gdp" data-i18n="nav.gdp">Europe GDP</a></li>
+            <li><a href="#assets" data-i18n="nav.assets">Liquid Assets</a></li>
+            <li><a href="#model" data-i18n="nav.model">Civilization Model</a></li>
+            <li><a href="#whitepaper" data-i18n="nav.whitepaper">Whitepaper</a></li>
+            <li><a href="#web3" data-i18n="nav.web3">Web3 Countries</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer.community">Community</h4>
+          <ul>
+            <li><a href="https://ucoingroup.github.io/earths-best-coin/" target="_blank" rel="noopener" data-i18n="hero.website">Official Website</a></li>
+            <li><a href="#home" data-i18n="hero.contract">Contract Address</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-disclaimer" data-i18n="footer.disclaimer"></p>
+        <p class="footer-rights">&copy; 2024-2026 EACO. <span data-i18n="footer.rights">All rights reserved.</span></p>
+      </div>
     </div>
-    <p class="footer-copy" id="footerCopy">Powered by EACO | CA: DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH</p>
   </footer>
 
-  <!-- ========== Modal ========== -->
-  <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
-    <div class="modal" id="modalContent">
-      <button class="modal-close" onclick="closeModalBtn()">&times;</button>
-      <div class="modal-emoji" id="modalEmoji"></div>
-      <h3 class="modal-title" id="modalTitle"></h3>
-      <p class="modal-cat" id="modalCat"></p>
-      <p class="modal-desc" id="modalDesc"></p>
-      <div class="modal-eaco-pay">
-        <div class="modal-eaco-label" id="modalPayLabel">Payment Method</div>
-        <div class="modal-eaco-value" id="modalPayValue">EACO ($e) on Solana</div>
-      </div>
-      <div class="modal-actions">
-        <button class="modal-btn modal-btn-primary" id="modalBtnTg" onclick="openTelegram()">Join Community</button>
-        <button class="modal-btn modal-btn-secondary" onclick="closeModalBtn()">Close</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ========== Toast ========== -->
-  <div class="toast" id="toast"></div>
-
-  <script src="data.js"></script>
-  <script src="app.js"></script>
+  <!-- Scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
